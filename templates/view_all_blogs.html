@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} | All Blogs{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/create_blog.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/view_blog.css')}}">
+
+{% endblock %}
+{%block content%}
+<center>
+    <div class="container">
+        <div class="form-box">
+            {% if current_user.username==Null%}
+            <h3>Welcome Guest</h3>
+            {%else%}
+            <h3>Welcome {{current_user.username}}</h3>
+            {%endif%}
+            <table>
+                <thead>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Rating</th>
+                    <th>Read</th>
+                </thead>
+                <tbody>
+                    {%for i in all_blogs%}
+                    <tr>
+                        <td>{{all_users[i.blog_user_id-1].username}}</td>
+                        <td>{{all_category[i.category_id-1]}}</td>
+                        {% if current_user.is_authenticated %}
+                        <td><a
+                                href="/blog_detail/{{i.id}}/{{all_users[i.blog_user_id-1].username}}/{{all_category[i.category_id-1]}}">{{i.blog_cont|safe|truncate(275)}}</a>
+                        </td>
+                        {%else%}
+                        <td>{{i.blog_cont|safe|truncate(275)}}</td>
+                        {%endif%}
+                        <td>{{i.blog_ratecount}}</td>
+                        <td>{{i.blog_readcount}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</center>
+{% endblock %}

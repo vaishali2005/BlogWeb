@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogWeb{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/base.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/flash.css')}}">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+    
+    <nav>
+        <div class="logo">BlogWeb</div>
+
+        <!-- Hidden checkbox -->
+    <input type="checkbox" id="checkbox">
+
+    <!-- Hamburger icon -->
+    <label for="checkbox" class="menu-toggle">&#9776;</label>
+
+        <ul class="nav-links">
+            <li><a href="{{url_for('blogs')}}">Blogs</a></li>
+            <li><a href="{{url_for('category')}}">Category</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('logout')}}">logout</a></li>
+        </ul>
+    </nav>
+    {% include 'flash.html' %}
+
+    <div>
+        {%block content%}
+
+    {% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='js/flash.js') }}"></script>
+
+</body>
+
+</html>

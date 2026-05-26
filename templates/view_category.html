@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} | Categories{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/view_category.css')}}">
+
+{% endblock %}
+{%block content%}
+
+<!-- <h2>All Categories</h2> -->
+<center>
+    <div class="container">
+        <div class="form-box">
+            <table>
+                <thead>
+                    <th class="td1">Category Id</th>
+                    <th>Category Name</th>
+                </thead>
+                <tbody>
+                    {%for i in all_data%}
+                    <tr>
+                        <td>{{i['category_id']}}</td>
+                        <td>{{i['category_name']}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</center>
+{% endblock %}

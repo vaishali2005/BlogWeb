@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} | Create Blog{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/create_blog.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/form.css')}}">
+
+{% endblock %}
+{%block content%}
+<h1>Create Blog page</h1>
+<center>
+    <div class="container">
+        <div class="form-box" style="width: 90%;">
+
+            <h2>Welcome {{current_user.username}}</h2>
+            <form action="" method="POST">
+                <table>
+                    <tr>
+                        <td class="td1">Select The Category:</td>
+                        <td>
+                            <select name="category_id" id="">
+                                {% for i in all_category_id %}
+                                <option value="{{i}}">{{all_category_name[loop.index0]}}</option>
+                                {%endfor%}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Blog Content</td>
+                        <td><textarea name="blog_text" rows="18"></textarea></td>
+                    </tr>
+                </table>
+
+                <div>
+                    <input type="submit" class="btn1" value="Create Blog">
+                </div>
+            </form>
+        </div>
+    </div>
+</center>
+{% endblock %}

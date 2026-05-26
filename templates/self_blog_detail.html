@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} | Edit Blog{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/create_blog.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/form.css')}}">
+
+{% endblock %}
+{%block content%}
+<h1>Create Blog page</h1>
+<center>
+    <div class="form-box" style="width: 90%; margin-top: 50px;">
+
+        <h2>Welcome {{current_user.username}}</h2>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td>Blog Content</td>
+                    <td><textarea name="blog_cont" rows="20" cols="70">{{blog_cont}}</textarea></td>
+                </tr>
+            </table>
+
+            <div>
+                <input type="submit" class="btn" name="action" style="width: 10%; margin: 10px;" value="Update">
+                <input type="submit" class="btn" name="action" style="width: 10%; margin: 10px;" value="Delete">
+            </div>
+
+        </form>
+    </div>
+</center>
+{% endblock %}

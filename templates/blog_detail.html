@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %} | Blog Detail{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/blog_detail.css')}}">
+
+{% endblock %}
+{%block content%}
+<center>
+    <div class="container">
+        <div class="form-box">
+            <form action="" method="POST">
+                <input type="hidden" name="blog_id" value="{{blog.id}}">
+
+                <table class="tbl1">
+                    <tr>
+                        <td>Blog is for the category : {{category}}</td>
+                    </tr>
+                    <tr>
+                        <td>Blog is read by : {{blog.blog_readcount}}</td>
+                    </tr>
+                    <tr>
+                        <td>Avrage Rating Given By Users : {{blog.blog_ratecount}}</td>
+                    </tr>
+                    <tbody>
+                        {%for i in all_blogs%}
+                        <tr>
+                            <td>{{all_users[i.blog_user_id-1].username}}</td>
+                            <td>{{all_category[i.category_id-1]}}</td>
+                            {% if current_user.is_authenticated %}
+                            <td><a
+                                    href="/blog_detail/{{i.id}}/{{all_users[i.blog_user_id-1].username}}/{{all_category[i.category_id-1]}}">{{i.blog_cont|safe|truncate(275)}}</a>
+                            </td>
+                            {%else%}
+                            <td>{{i.blog_cont|safe|truncate(275)}}</td>
+                            {%endif%}
+                            <td>{{i.blog_ratecount}}</td>
+                            <td>{{i.blog_readcount}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+
+                <table>
+                    <tr>
+                        <td>
+                            Authored By : </td>
+                        <td>{{author}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                {{blog.blog_cont|safe}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <p>
+                            <td>Total User Rated :</td>
+                            <td> {{blog.blog_ratecount}}</td>
+                        </p>
+                    </tr>
+                </table>
+                {% if current_user.username != author %}
+                <table>
+                    <tr>
+                        <td>Please Rate content :</td>
+                        <td>
+                            <select name="rating" id="">
+                                <option value="1">Not useful</option>
+                                <option value="2">A bit useful</option>
+                                <option value="3">Good</option>
+                                <option value="4">Excellent</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comments :</td>
+                        <td><textarea name="comment" id="" rows="8"></textarea></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Comment" class="btn1">
+            </form>
+
+            {%endif%}
+        </div>
+    </div>
+</center>
+{% endblock %}

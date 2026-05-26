@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} | User Blogs{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/create_blog.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/view_blog.css')}}">
+
+{% endblock %}
+{%block content%}
+<center>
+    <div class="container">
+        <div class="form-box">
+            <h2>Hello {{current_user.username}}</h2>
+            <h3>Your Authored Blogs are!!</h3>
+            <table>
+                <thead>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Read Count</th>
+                    <th>Rating Count</th>
+                </thead>
+                <tbody>
+                    {%for i in all_self_blog%}
+                    <tr>
+                        <td>{{all_categories[i.category_id-1]}}</td>
+                        <td><a
+                                href="/self_blog_detail/{{i.id}}/{{all_categories[i.category_id-1]}}">{{i.blog_cont|safe|truncate(275)}}</a>
+                        </td>
+                        <td>{{i.blog_readcount}}</td>
+                        <td>{{i.blog_ratecount}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</center>
+{% endblock %}

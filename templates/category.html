@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} | Add Category{% endblock %}
+#to extends css files
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/form.css')}}">
+{% endblock %}
+{%block content%}
+<div class="container">
+    <div class="form-box">
+        <h2>Add New Category</h2>
+
+        <form action="/add_category" method="POST">
+            <div class="input-group">
+                <label for="category_name">Category Name</label>
+                <input type="text" id="category_name" name="category_name" placeholder="Enter your Category">
+            </div>
+
+            <button type="submit" class="btn">Add Category</button>
+            <div class="toggle-text">
+                <a href="{{url_for('view_category')}}">View All Categories</a>
+            </div>
+        </form><br>
+        <h6>T&C : once you add new category you cannot remove it</h6>
+    </div>
+</div>
+{% endblock %}

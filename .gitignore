@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+
+venv/
+blog_env/
+
+*.db
+*.sqlite3
+.env
+
+# System files
+.DS_Store
+
+# Flask instance folder
+instance/
+
+*.exe
+*.txt
+DEV_NOTES.md
+notes.txt

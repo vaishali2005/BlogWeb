@@ -1,0 +1,72 @@
+/* Main container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;      
+    align-items: flex-start;      
+    padding-top: 120px;           
+    padding-bottom: 40px;
+    
+}
+
+/* Card box */
+.form-box {
+    background: #1e1e2f;
+    padding: 40px;
+    width: 80%;
+    max-width: 1100px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* Headings */
+.form-box h2,
+.form-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table{
+    width: 100%;
+    /* border-collapse: collapse; */
+    border-radius: 20px;
+}
+
+thead th{
+    padding: 12px;
+    text-align: left;
+}
+
+tbody td{
+    padding: 12px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+td:nth-child(3){
+    max-width: 500px;
+    word-wrap: break-word;
+}
+
+/* Mobile responsive */
+@media (max-width:768px){
+
+    .form-box{
+        width: 95%;
+        padding: 20px;
+    }
+
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: wrap;
+    }
+
+    thead th,
+    tbody td{
+        font-size: 13px;
+        padding: 8px;
+    }
+}

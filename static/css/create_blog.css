@@ -1,0 +1,37 @@
+table {
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 2%;
+    width: 80%;
+    margin-bottom: 0px;
+}
+
+.td1 {
+    width: 20%;
+}
+
+select {
+    width: 80%;
+}
+
+textarea {
+    width: 80%;
+}
+
+.btn1 {
+    /* width: 100%; */
+    padding: 10px;
+    border: none;
+    background: #00bcd4;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 10%;
+    margin: 10px;
+}
+
+.btn1:hover {
+    background: #0097a7;
+}

@@ -1,0 +1,56 @@
+.flash {
+    padding: 12px 20px;
+    margin: 10px auto;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    width: 300px;
+    max-width: 600px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    
+    z-index: 1000;
+}
+
+
+/* Categories */
+.flash.success { background-color: #28a745; }
+.flash.error { background-color: #dc3545; }
+.flash.warning { background-color: #ffc107; color: black; }
+.flash.info { background-color: #17a2b8; }
+
+/* Close button */
+.flash span {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* 📱 Mobile devices */
+@media (max-width: 600px) {
+    .flash {
+        width: 95%;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* 💻 Tablets */
+@media (max-width: 900px) {
+    .flash {
+        width: 92%;
+        font-size: 15px;
+    }
+}
+
+/* 🖥️ Large screens */
+@media (min-width: 1200px) {
+    .flash {
+        max-width: 700px;
+        font-size: 16px;
+    }
+}
