@@ -15,6 +15,5 @@ blog_env/
 instance/
 
 *.exe
-*.txt
 DEV_NOTES.md
-notes.txt
+Blogwebsite.md
