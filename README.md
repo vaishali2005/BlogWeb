@@ -10,7 +10,6 @@ A simple, responsive, and user-friendly blog web application built with **Flask*
 - ✍️ Create, edit, and delete blog posts
 - 📖 Browse and read all published blogs
 - 💾 SQLite3 database for lightweight data storage
-- 📱 Responsive and clean user interface
 
 ---
 
@@ -93,17 +92,4 @@ http://127.0.0.1:5000/
 ```
 
 ---
-## 📸 Screenshots
 
-### Home Page
-![Home](screenshots/home.png)
-
-### Login Page
-![Login](screenshots/login.png)
-
-### Create Blog
-![Create Blog](screenshots/create-blog.png)
-
-### Blog Details
-![Blog Details](screenshots/blog-details.png)
----
