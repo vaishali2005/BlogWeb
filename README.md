@@ -1,24 +1,38 @@
-BlogWeb - Flask Blog Application
+# 🌐 BlogWeb
 
-A simple and clean blog web application built using **Flask** and **SQLite3**.  
-Users can create, view, and manage blog posts with a smooth interface.
+A simple, responsive, and user-friendly blog web application built with **Flask** and **SQLite3**. BlogWeb allows users to securely register, log in, and manage their blog posts through an intuitive interface.
 
-Features : 
+---
 
-    User Authentication (Login / Signup)
-    Create, edit, and delete blog posts
-    View all blogs
-    Lightweight and fast (SQLite database)
-    Responsive UI design
+## ✨ Features
 
+- 🔐 User Authentication (Sign Up & Login)
+- ✍️ Create, edit, and delete blog posts
+- 📖 Browse and read all published blogs
+- 💾 SQLite3 database for lightweight data storage
+- 📱 Responsive and clean user interface
 
-Tech Stack : 
+---
 
-Backend :  Flask (Python)
-Database :  SQLite3
-Frontend :  HTML, CSS, JavaScript
+## 🛠️ Tech Stack
 
-Project Structure : 
+**Backend**
+- Flask (Python)
+
+**Database**
+- SQLite3
+- Flask-SQLAlchemy
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## 📁 Project Structure
+
+```text
 BlogWeb/
 │
 ├── app/
@@ -27,22 +41,69 @@ BlogWeb/
 ├── run.py
 ├── requirements.txt
 ├── README.md
-├── .gitignore
+└── .gitignore
+```
 
-Installation & Setup : Clone the repository
+---
 
-Create virtual environment 
+## 🚀 Installation & Setup
 
-Install dependencies
+### 1. Clone the repository
 
-Run the application
+```bash
+git clone https://github.com/vaishali2005/BlogWeb.git
+cd BlogWeb
+```
 
-Environment Variables
+### 2. Create a virtual environment
 
-Create a .env file in the root directory : SECRET_KEY=your_secret_key_here
+```bash
+python -m venv venv
+```
 
+Activate the virtual environment:
+```bash
+venv\Scripts\activate
+```
 
-Notes : 
+### 3. Install dependencies
 
-Database (.db) file is not included for security reasons  
-It will be created automatically when you run the app  
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root and add:
+
+```env
+SECRET_KEY=your_secret_key_here
+```
+
+### 5. Run the application
+
+```bash
+python run.py
+```
+
+Open your browser and visit:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+## 📸 Screenshots
+
+### Home Page
+![Home](screenshots/home.png)
+
+### Login Page
+![Login](screenshots/login.png)
+
+### Create Blog
+![Create Blog](screenshots/create-blog.png)
+
+### Blog Details
+![Blog Details](screenshots/blog-details.png)
+---
