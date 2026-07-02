@@ -102,5 +102,5 @@ http://127.0.0.1:5000/
 - Pagination is not available for large numbers of blog posts.
 - SQLite is used as the database, making the application more suitable for learning and small-scale projects rather than production environments.
 - The application is designed for local development and is not deployed to a public hosting platform.
--not fully responsive
+- not fully responsive
 ---
