@@ -92,4 +92,15 @@ http://127.0.0.1:5000/
 ```
 
 ---
+## ⚠️ Current Limitations
 
+- User profile customization is not available.
+- Password reset and email verification are not implemented.
+- Blog search and advanced filtering features are not available.
+- Rich text editing and image uploads within blog posts are not supported.
+- User roles (e.g., Admin and Author) are not implemented.
+- Pagination is not available for large numbers of blog posts.
+- SQLite is used as the database, making the application more suitable for learning and small-scale projects rather than production environments.
+- The application is designed for local development and is not deployed to a public hosting platform.
+-not fully responsive
+---
